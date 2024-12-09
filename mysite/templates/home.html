@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px; /* Ancho máximo del contenedor */
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Proporción responsiva */
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ccc; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            text-align: center;
+            transition: transform 0.3s; /* Efecto al pasar el mouse */
+            max-width: 100%; /* Asegura que la tarjeta no exceda el ancho del contenedor */
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+        }
+        .card h3 {
+            color: #333;
+        }
+        .card p {
+            color: #555;
+            font-size: 14px;
+        }
+        .card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card button:hover {
+            background-color: #0056b3;
+        }
+        .details-card {
+            margin-top: 20px; /* Espacio superior para separar de las tarjetas */
+            display: none; /* Oculto por defecto */
+            background-color: #fff;
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/cursopython.jpg') }}" class="card-img-top" alt="...">
+            <h3>Python desde Cero</h3>
+            <p>Duración: 60 horas<br>Nivel: Principiante<br>Precio: $50.000<br>Acceso: Ilimitado</p><br>
+            <button onclick="mostrarDetalles('python')">Ver Detalles</button>
+            
+            <div id="details-python" class="details-card">
+                <!-- Detalles del curso se insertarán aquí -->
+                <h4>Detalles del Curso</h4>
+                <p>Aprende Python desde sus conceptos básicos hasta niveles avanzados. 
+                Este curso está diseñado para principiantes sin experiencia previa en programación. 
+                A lo largo del curso, dominarás temas como estructuras de datos, control de flujo, funciones, 
+                manejo de errores y mucho más, preparándote para proyectos reales.</p>
+                <br>
+                <p>¡Inscríbete hoy y empieza a programar en Python!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/imgdatos.jpg') }}" class="card-img-top" alt="...">
+            <h3>Análisis de Datos desde Cero</h3>
+            <p>Duración: 50 horas<br>Nivel: Principiante<br>Precio: $70.000<br>Acceso: Ilimitado</p><br>
+            <button onclick="mostrarDetalles('analisis')">Ver Detalles</button>
+
+            <div id="details-analisis" class="details-card">
+                <!-- Detalles del curso se insertarán aquí -->
+                <h4>Detalles del Curso</h4>
+                <p>Sumérgete en el mundo del análisis de datos con este curso diseñado para principiantes. 
+                Aprende a manejar grandes volúmenes de datos, identificar patrones y tomar decisiones basadas en datos. 
+                A lo largo del curso, dominarás herramientas clave como Excel, SQL y Python.</p>
+                <br>
+                <p>¡Empieza hoy y lleva tu carrera al siguiente nivel con el análisis de datos!</p>
+            </div>
+        </div>
+
+        <div class="card">   
+            <img src="{{ url_for('static', filename='img/imgia.jpg') }}" class="card-img-top" alt="...">
+            <h3>Inteligencia Artificial desde Cero</h3>
+            <p>Duración: 150 horas<br>Nivel: Principiante<br>Precio: $90.000<br>Acceso: Ilimitado</p><br>
+            <button onclick="mostrarDetalles('ia')">Ver Detalles</button>
+
+            <div id="details-ia" class="details-card">
+                <!-- Detalles del curso se insertarán aquí -->
+                <h4>Detalles del Curso</h4>
+                <p>Adéntrate en el fascinante mundo de la Inteligencia Artificial con este curso introductorio. Aprende los conceptos clave de la IA, incluyendo machine learning y redes neuronales.</p>
+                <br>
+                <p>¡Inscríbete ahora y sé parte del futuro de la tecnología con Inteligencia Artificial!</p>
+              </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarDetalles(curso) {
+          // Ocultar todos los detalles
+          const detailCards = document.querySelectorAll('.details-card');
+          detailCards.forEach(card => card.style.display = 'none');
+
+          // Mostrar solo el detalle correspondiente
+          const detailsCard = document.getElementById(`details-${curso}`);
+          detailsCard.style.display = 'block'; // Mostrar la tarjeta
+        }
+    </script>
+
+{% endblock %}

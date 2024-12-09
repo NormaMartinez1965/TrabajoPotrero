@@ -1,0 +1,46 @@
+
+body {
+    background-color: #f0f4f8; /* Color de fondo suave */
+    font-family: 'Arial', sans-serif;
+}
+
+.card {
+    background-color: #ffffff; /* Fondo blanco para la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s; /* Transición suave al pasar el mouse */
+    margin: 20px auto; /* Margen automático para centrar */
+    max-width: 800px; /* Ancho máximo aumentado para la tarjeta */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.card-img-top {
+    border-top-left-radius: 10px; /* Bordes redondeados en la parte superior */
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px; /* Espaciado interno */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Tamaño de fuente del título */
+    color: #333; /* Color del texto del título */
+    margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+.card-text {
+    font-size: 1rem; /* Tamaño de fuente del texto */
+    color: #555; /* Color del texto */
+    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+}
+
+/* Estilo adicional para mejorar la presentación */
+h5.card-title {
+    text-align: center; /* Centrar el título */
+}
+
+       

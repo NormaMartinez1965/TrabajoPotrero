@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+<style>
+    body {
+        background-color: #f0f4f8; /* Color de fondo suave */
+        font-family: 'Arial', sans-serif;
+    }
+
+    .card {
+        background-color: #ffffff; /* Fondo blanco para la tarjeta */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        transition: transform 0.3s; /* Transición suave al pasar el mouse */
+        margin: 20px auto; /* Margen automático para centrar */
+        max-width: 1200px; /* Ancho máximo aumentado para la tarjeta (triple del original) */
+        width: 100%; /* Asegura que ocupe todo el espacio disponible hasta el max-width */
+    }
+
+    .card:hover {
+        transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    }
+
+    .card-img-top {
+        border-top-left-radius: 10px; /* Bordes redondeados en la parte superior */
+        border-top-right-radius: 10px;
+    }
+
+    .card-body {
+        padding: 20px; /* Espaciado interno */
+    }
+
+    .card-title {
+        font-size: 1.5rem; /* Tamaño de fuente del título */
+        color: #333; /* Color del texto del título */
+        margin-bottom: 15px; /* Espacio debajo del título */
+    }
+
+    .card-text {
+        font-size: 1rem; /* Tamaño de fuente del texto */
+        color: #555; /* Color del texto */
+        line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+    }
+
+    /* Estilo adicional para mejorar la presentación */
+    h5.card-title {
+        text-align: center; /* Centrar el título */
+    }  
+</style>
+
+<div class="card">
+    <img src="{{ url_for('static', filename='img/.jpg') }}" class="card-img-top" alt="...">
+  
+    <div class="card-body">
+        <h5 class="card-title">Sobre nosotros</h5>
+        <p class="card-text">Quiénes Somos
+        Somos una plataforma líder en educación en línea dedicada
+        a ofrecer cursos de alta calidad en diversas áreas del conocimiento. Nuestra misión es empoderar a estudiantes de todo el mundo brindándoles acceso a contenido educativo actualizado y diseñado por expertos en la industria.
+
+        Con una interfaz amigable y recursos accesibles, nuestros cursos están diseñados para adaptarse a tu ritmo de aprendizaje, ya seas un principiante o un profesional que busca mejorar sus habilidades. Nos comprometemos a ayudarte a alcanzar tus objetivos académicos y profesionales mediante una experiencia de aprendizaje interactiva y efectiva.
+
+        Nuestra Visión: Ser la principal referencia en educación en línea, democratizando el acceso al conocimiento a nivel global.
+
+        Nuestra Misión: Brindar oportunidades de aprendizaje de calidad a través de tecnología accesible e innovadora.</p>
+        
+    </div>
+</div>
+{% endblock %}
